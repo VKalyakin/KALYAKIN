@@ -146,8 +146,8 @@ body, html {
   }
 
   .neon-spot {
-    width: 800px;
-    height: 800px;
-    filter: blur(150px);
+    width: 100px;
+    height: 100px;
+    filter: blur(40px);
   }
 }
