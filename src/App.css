@@ -155,6 +155,6 @@ body {
   .neon-spot {
     width: 35px;
     height: 35px;
-    filter: blur(150px);
+    filter: blur(40px);
   }
 }
