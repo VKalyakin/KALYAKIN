@@ -1,0 +1,150 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #1a1a1a, #0d0d0d);
+  overflow: hidden;
+}
+
+.neon-spot {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 191, 255, 0.2);
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: moveSpot 15s infinite ease-in-out;
+}
+
+@keyframes moveSpot {
+  0% { transform: translate(-50%, -50%) translate(0, 0); }
+  25% { transform: translate(-50%, -50%) translate(50vw, 50vh); }
+  50% { transform: translate(-50%, -50%) translate(100vw, 0); }
+  75% { transform: translate(-50%, -50%) translate(50vw, -50vh); }
+  100% { transform: translate(-50%, -50%) translate(0, 0); }
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s ease-out forwards;
+}
+
+.menu-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header {
+  padding: 20px;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin: 0;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #00bfff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 20px;
+}
+
+.contact-button {
+  background: none;
+  border: 2px solid #00bfff;
+  color: #00bfff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-button:hover {
+  background: rgba(0, 191, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.cursor-highlight {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 191, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+  }
+
+  .contact-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Cursor highlight effect */
+body {
+  cursor: none;
+}
+
+body:hover .cursor-highlight {
+  display: block;
+}
+
+.cursor-highlight {
+  display: none;
+}
