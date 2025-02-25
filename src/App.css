@@ -153,8 +153,8 @@ body {
   }
 
   .neon-spot {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
     filter: blur(150px);
   }
 }
